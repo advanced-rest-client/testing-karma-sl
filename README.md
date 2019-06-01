@@ -44,3 +44,34 @@ echo "Key: $SAUCE_ACCESS_KEY"
 ```bash
 npm run test:sl
 ```
+
+### Travis configuration
+
+Do not use `sauce_connect: true` in your Travis configuration file. If that's impossible, set `startConnect` and `startTunnel` options in your `karma.sl.config.js` file:
+
+```javascript
+const merge = require('webpack-merge');
+const slSettings = require('@advanced-rest-client/testing-karma-sl/sl-settings.js');
+const createBaseConfig = require('./karma.conf.js');
+
+module.exports = (config) => {
+  const cnf = {
+    sauceLabs: {
+      testName: 'My component'
+    }
+  };
+  if (process.env.TRAVIS) {
+    cnf.browserStack = {
+      startTunnel: false
+    };
+    cnf.sauceLabs.startConnect = false;
+    // Use this if you run into trouble receiving data back from SL.
+    cnf.sauceLabs.tunnelIdentifier = process.env.TRAVIS_JOB_NUMBER;
+  }
+  config.set(
+    merge(slSettings(config), createBaseConfig(config), cnf)
+  );
+
+  return config;
+};
+```
