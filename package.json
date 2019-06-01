@@ -1,0 +1,43 @@
+{
+  "name": "@advanced-rest-client/testing-karma-sl",
+  "version": "1.0.0",
+  "description": "Testing with karma using SauceLabs",
+  "scripts": {
+    "test": "karma start demo/karma.conf.js --coverage",
+    "test:watch": "karma start demo/karma.conf.js --auto-watch=true --single-run=false",
+    "test:legacy": "karma start demo/karma.conf.js --legacy --coverage",
+    "test:legacy:watch": "karma start demo/karma.conf.js --legacy --auto-watch=true --single-run=false",
+    "test:sl": "karma start demo/karma.sl.conf.js --legacy --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/advanced-rest-client/testing-karma-sl.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "web-components",
+    "testing",
+    "karma",
+    "sauce-labs"
+  ],
+  "author": "Pawel Psztyc",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/advanced-rest-client/testing-karma-sl/issues"
+  },
+  "homepage": "https://github.com/advanced-rest-client/testing-karma-sl#readme",
+  "files": [
+    "*.js"
+  ],
+  "dependencies": {
+    "@open-wc/testing-karma": "^2.0.3",
+    "@types/node": "^12.0.4",
+    "karma-sauce-launcher": "^2.0.2"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4"
+  }
+}

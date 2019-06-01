@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "test": "karma start --coverage",
+    "test:watch": "karma start --auto-watch=true --single-run=false",
+    "test:legacy": "karma start --legacy --coverage",
+    "test:legacy:watch": "karma start --legacy --auto-watch=true --single-run=false",
+    "test:bs": "karma start karma.sl.conf.js --legacy --coverage"
+  },
+  "devDependencies": {
+    "@open-wc/testing-karma": "^0.3.0",
+    "webpack-merge": "^4.1.5",
+    "@advanced-rest-client/testing-karma-sl": "^1.0.0"
+  }
+}
