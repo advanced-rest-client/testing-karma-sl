@@ -21,8 +21,7 @@ if (!process.env.SAUCE_USERNAME || !process.env.SAUCE_ACCESS_KEY) {
 module.exports = () => ({
 
   sauceLabs: {
-    testName: 'Component test unit',
-    startConnect: true
+    testName: 'Component test unit'
   },
 
   customLaunchers: {
