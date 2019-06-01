@@ -7,7 +7,7 @@ module.exports = (config) => {
   config.set(
     merge(slSettings(), createBaseConfig(config), {
       sauceLabs: {
-        testName: 'advanced-rest-client',
+        testName: 'My project',
       }
     })
   );
