@@ -85,11 +85,5 @@ module.exports = () => ({
     'SL_IE_11',
     'SL_EDGE'
   ],
-
-  // web server port
-  port: 9876,
-  colors: true,
-  captureTimeout: 120000,
-  reporters: ['dots', 'saucelabs'],
-  singleRun: true
+  reporters: ['dots', 'saucelabs']
 });
