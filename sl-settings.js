@@ -19,7 +19,8 @@ if (!process.env.SAUCE_USERNAME || !process.env.SAUCE_ACCESS_KEY) {
  * @return {Object} Default configuration
  */
 module.exports = () => ({
-
+  // Try 'websocket' for a faster transmission first. Fallback to 'polling' if necessary.
+  transports: ['websocket', 'polling'],
   sauceLabs: {
     testName: 'Component test unit'
   },
