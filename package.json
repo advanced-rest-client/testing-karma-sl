@@ -1,6 +1,6 @@
 {
   "name": "@advanced-rest-client/testing-karma-sl",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Testing with karma using SauceLabs",
   "scripts": {
     "test": "karma start demo/karma.conf.js --coverage",
