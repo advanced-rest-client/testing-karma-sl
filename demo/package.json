@@ -7,8 +7,7 @@
     "test:sl": "karma start karma.sl.conf.js --legacy --coverage"
   },
   "devDependencies": {
-    "@open-wc/testing-karma": "^0.3.0",
-    "webpack-merge": "^4.1.5",
-    "@advanced-rest-client/testing-karma-sl": "^1.0.0"
+    "@open-wc/testing-karma": "^3.1.6",
+    "deepmerge": "^4.0.0"
   }
 }
