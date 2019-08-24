@@ -19,6 +19,14 @@ if (!process.env.SAUCE_USERNAME || !process.env.SAUCE_ACCESS_KEY) {
  * @return {Object} Default configuration
  */
 module.exports = () => ({
+  files: [
+    {
+      pattern: require.resolve('chai/chai.js')
+    },
+    {
+      pattern: require.resolve('axe-core/axe.min.js')
+    }
+  ],
   // Try 'websocket' for a faster transmission first. Fallback to 'polling' if necessary.
   transports: ['websocket', 'polling'],
   sauceLabs: {
