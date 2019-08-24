@@ -83,7 +83,7 @@ module.exports = () => ({
     'SL_Firefox-1',
     'SL_Safari',
     'SL_Safari-1',
-    'SL_IE_11',
+    // 'SL_IE_11',
     'SL_EDGE'
   ],
   reporters: ['dots', 'saucelabs']
