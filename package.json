@@ -1,6 +1,6 @@
 {
   "name": "@advanced-rest-client/testing-karma-sl",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Testing with karma using SauceLabs",
   "scripts": {
     "test": "karma start demo/karma.conf.js --coverage",
@@ -32,8 +32,8 @@
     "*.js"
   ],
   "dependencies": {
-    "@open-wc/testing-karma": "^3.1.24",
-    "@types/node": "^12.7.2",
+    "@open-wc/testing-karma": "^3.1.32",
+    "@types/node": "^12.7.5",
     "karma-sauce-launcher": "^2.0.2"
   },
   "devDependencies": {
