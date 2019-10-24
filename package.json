@@ -1,13 +1,13 @@
 {
   "name": "@advanced-rest-client/testing-karma-sl",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Testing with karma using SauceLabs",
   "scripts": {
-    "test": "karma start demo/karma.conf.js --coverage",
+    "test": "karma start demo/karma.conf.js",
     "test:watch": "karma start demo/karma.conf.js --auto-watch=true --single-run=false",
-    "test:legacy": "karma start demo/karma.conf.js --legacy --coverage",
-    "test:legacy:watch": "karma start demo/karma.conf.js --legacy --auto-watch=true --single-run=false",
-    "test:sl": "karma start demo/karma.sl.conf.js --legacy --coverage"
+    "test:legacy": "karma start demo/karma.conf.js --compatibility all --coverage",
+    "test:legacy:watch": "karma start demo/karma.conf.js --compatibility all --auto-watch=true --single-run=false",
+    "test:sl": "karma start demo/karma.sl.conf.js --compatibility all --coverage"
   },
   "repository": {
     "type": "git",
@@ -32,13 +32,12 @@
     "*.js"
   ],
   "dependencies": {
-    "@open-wc/testing-karma": "^3.1.32",
-    "@types/node": "^12.7.5",
+    "@open-wc/testing-karma": "^3.1.42",
     "karma-sauce-launcher": "^2.0.2"
   },
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^6.2.0",
-    "deepmerge": "^4.0.0"
+    "deepmerge": "^4.2.1",
+    "mocha": "^6.2.2"
   }
 }
