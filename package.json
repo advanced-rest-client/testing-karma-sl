@@ -1,6 +1,6 @@
 {
   "name": "@advanced-rest-client/testing-karma-sl",
-  "version": "1.0.6",
+  "version": "1.1.0",
   "description": "Testing with karma using SauceLabs",
   "scripts": {
     "test": "karma start demo/karma.conf.js",
@@ -32,12 +32,12 @@
     "*.js"
   ],
   "dependencies": {
-    "@open-wc/testing-karma": "^3.1.42",
+    "@open-wc/testing-karma": "^3.1.54",
     "karma-sauce-launcher": "^2.0.2"
   },
   "devDependencies": {
     "chai": "^4.2.0",
-    "deepmerge": "^4.2.1",
+    "deepmerge": "^4.2.2",
     "mocha": "^6.2.2"
   }
 }

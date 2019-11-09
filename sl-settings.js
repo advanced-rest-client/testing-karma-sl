@@ -7,6 +7,19 @@ if (!process.env.SAUCE_USERNAME || !process.env.SAUCE_ACCESS_KEY) {
     export SAUCE_ACCESS_KEY=[key];
   `);
 }
+const sauceLabs = {
+  testName: 'Component unit test'
+};
+let browserStack;
+if (process.env.TRAVIS) {
+  const buildLabel = 'TRAVIS #' + process.env.TRAVIS_BUILD_NUMBER + ' (' + process.env.TRAVIS_BUILD_ID + ')';
+  browserStack = {
+    build: buildLabel,
+    tunnelIdentifier: process.env.TRAVIS_JOB_NUMBER
+  };
+  sauceLabs.build = buildLabel;
+  sauceLabs.tunnelIdentifier = process.env.TRAVIS_JOB_NUMBER;
+}
 /**
  * Extends the es5 karma config with a browserstack luncher
  *
@@ -22,17 +35,12 @@ module.exports = () => ({
   files: [
     {
       pattern: require.resolve('chai/chai.js')
-    },
-    {
-      pattern: require.resolve('axe-core/axe.min.js')
     }
   ],
   // Try 'websocket' for a faster transmission first. Fallback to 'polling' if necessary.
   transports: ['websocket', 'polling'],
-  sauceLabs: {
-    testName: 'Component test unit'
-  },
-
+  sauceLabs,
+  browserStack,
   customLaunchers: {
     'SL_Chrome': {
       base: 'SauceLabs',
@@ -80,7 +88,7 @@ module.exports = () => ({
       base: 'SauceLabs',
       browserName: 'microsoftedge',
       platform: 'Windows 10',
-      version: 'latest'
+      version: '17.17134'
     }
   },
 
@@ -94,5 +102,15 @@ module.exports = () => ({
     // 'SL_IE_11',
     'SL_EDGE'
   ],
-  reporters: ['dots', 'saucelabs']
+  reporters: ['dots', 'saucelabs'],
+
+  browserDisconnectTimeout: 10000,
+  browserDisconnectTolerance: 1,
+  browserNoActivityTimeout: 4*60*1000,
+  captureTimeout: 4*60*1000,
+
+  // client: {
+  //   mocha: {
+  //   }
+  // }
 });

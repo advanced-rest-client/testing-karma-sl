@@ -1,7 +1,7 @@
 # Testing via SauceLabs
 
-This will run your local test via SauceLabs browsers/devices.
-You will need to have a SauceLabs account.
+This runs your local test via SauceLabs browsers/devices.
+You need to have a SauceLabs account.
 
 Using:
 -   Karma via `@open-wc/testing-karma`
@@ -15,7 +15,7 @@ Using:
 -   Add these scripts to your package.json
     ```js
     "scripts": {
-      "test:sl": "karma start karma.sl.config.js --legacy --coverage"
+      "test:sl": "karma start karma.sl.config.js --compatibility all --coverage"
     },
     ```
 
@@ -41,37 +41,7 @@ echo "Key: $SAUCE_ACCESS_KEY"
 ```
 
 ### Usage
+
 ```bash
 npm run test:sl
-```
-
-### Travis configuration
-
-Do not use `sauce_connect: true` in your Travis configuration file. If that's impossible, set `startConnect` and `startTunnel` options in your `karma.sl.config.js` file:
-
-```javascript
-const merge = require('webpack-merge');
-const slSettings = require('@advanced-rest-client/testing-karma-sl/sl-settings.js');
-const createBaseConfig = require('./karma.conf.js');
-
-module.exports = (config) => {
-  const cnf = {
-    sauceLabs: {
-      testName: 'My component'
-    }
-  };
-  if (process.env.TRAVIS) {
-    cnf.browserStack = {
-      startTunnel: false
-    };
-    cnf.sauceLabs.startConnect = false;
-    // Use this if you run into trouble receiving data back from SL.
-    cnf.sauceLabs.tunnelIdentifier = process.env.TRAVIS_JOB_NUMBER;
-  }
-  config.set(
-    merge(slSettings(config), createBaseConfig(config), cnf)
-  );
-
-  return config;
-};
 ```
