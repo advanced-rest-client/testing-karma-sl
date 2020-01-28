@@ -32,12 +32,12 @@
     "*.js"
   ],
   "dependencies": {
-    "@open-wc/testing-karma": "^3.1.54",
+    "@open-wc/testing-karma": "^3.2.32",
     "karma-sauce-launcher": "^2.0.2"
   },
   "devDependencies": {
     "chai": "^4.2.0",
     "deepmerge": "^4.2.2",
-    "mocha": "^6.2.2"
+    "mocha": "^7.0.1"
   }
 }
