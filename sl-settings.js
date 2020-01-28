@@ -88,8 +88,14 @@ module.exports = () => ({
       base: 'SauceLabs',
       browserName: 'microsoftedge',
       platform: 'Windows 10',
-      version: '17.17134'
-    }
+      version: 'latest'
+    },
+    'SL_EDGE-1': {
+      base: 'SauceLabs',
+      browserName: 'microsoftedge',
+      platform: 'Windows 10',
+      version: 'latest-1'
+    },
   },
 
   browsers: [
@@ -100,7 +106,8 @@ module.exports = () => ({
     'SL_Safari',
     'SL_Safari-1',
     // 'SL_IE_11',
-    'SL_EDGE'
+    'SL_EDGE',
+    'SL_EDGE-1',
   ],
   reporters: ['dots', 'saucelabs'],
 
