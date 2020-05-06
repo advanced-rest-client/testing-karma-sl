@@ -8,18 +8,21 @@ if (!process.env.SAUCE_USERNAME || !process.env.SAUCE_ACCESS_KEY) {
   `);
 }
 const sauceLabs = {
-  testName: 'Component unit test'
+  testName: 'Component unit test',
 };
 let browserStack;
 if (process.env.TRAVIS) {
   const buildLabel = 'TRAVIS #' + process.env.TRAVIS_BUILD_NUMBER + ' (' + process.env.TRAVIS_BUILD_ID + ')';
   browserStack = {
     build: buildLabel,
-    tunnelIdentifier: process.env.TRAVIS_JOB_NUMBER
+    tunnelIdentifier: process.env.TRAVIS_JOB_NUMBER,
   };
   sauceLabs.build = buildLabel;
   sauceLabs.tunnelIdentifier = process.env.TRAVIS_JOB_NUMBER;
 }
+
+/** @typedef {import('karma').ConfigOptions} ConfigOptions */
+
 /**
  * Extends the es5 karma config with a browserstack luncher
  *
@@ -29,7 +32,7 @@ if (process.env.TRAVIS) {
  * - Safari
  * - Edge
  * and IE11.
- * @return {Object} Default configuration
+ * @return {ConfigOptions} Default configuration
  */
 module.exports = () => ({
   files: [
@@ -45,56 +48,65 @@ module.exports = () => ({
     'SL_Chrome': {
       base: 'SauceLabs',
       browserName: 'chrome',
+      // @ts-ignore
       version: 'latest',
-      platform: 'Windows 10'
+      platform: 'Windows 10',
     },
     'SL_Chrome-1': {
       base: 'SauceLabs',
       browserName: 'chrome',
+      // @ts-ignore
       version: 'latest-1',
-      platform: 'Windows 10'
+      platform: 'Windows 10',
     },
     'SL_Firefox': {
       base: 'SauceLabs',
       browserName: 'firefox',
+      // @ts-ignore
       version: 'latest',
-      platform: 'Windows 10'
+      platform: 'Windows 10',
     },
     'SL_Firefox-1': {
       base: 'SauceLabs',
       browserName: 'firefox',
+      // @ts-ignore
       version: 'latest-1',
-      platform: 'Windows 10'
+      platform: 'Windows 10',
     },
     'SL_Safari-1': {
       base: 'SauceLabs',
       browserName: 'safari',
+      // @ts-ignore
       version: 'latest-1',
-      platform: 'macOS 10.13'
+      platform: 'macOS 10.13',
     },
     'SL_Safari': {
       base: 'SauceLabs',
       browserName: 'safari',
+      // @ts-ignore
       version: 'latest',
-      platform: 'macOS 10.13'
+      platform: 'macOS 10.13',
     },
     'SL_IE_11': {
       base: 'SauceLabs',
       browserName: 'internet explorer',
       platform: 'Windows 8.1',
-      version: '11'
+      // @ts-ignore
+      version: '11',
     },
     'SL_EDGE': {
       base: 'SauceLabs',
       browserName: 'microsoftedge',
       platform: 'Windows 10',
-      version: 'latest'
+      // @ts-ignore
+      version: 'latest',
     },
     'SL_EDGE-1': {
       base: 'SauceLabs',
       browserName: 'microsoftedge',
       platform: 'Windows 10',
-      version: 'latest-1'
+      // @ts-ignore
+      version: 'latest-1',
     },
   },
 

@@ -5,9 +5,7 @@
   "scripts": {
     "test": "karma start demo/karma.conf.js",
     "test:watch": "karma start demo/karma.conf.js --auto-watch=true --single-run=false",
-    "test:legacy": "karma start demo/karma.conf.js --compatibility all --coverage",
-    "test:legacy:watch": "karma start demo/karma.conf.js --compatibility all --auto-watch=true --single-run=false",
-    "test:sl": "karma start demo/karma.sl.conf.js --compatibility all --coverage"
+    "test:sl": "karma start demo/karma.sl.conf.js --compatibility auto --coverage"
   },
   "repository": {
     "type": "git",
@@ -32,12 +30,14 @@
     "*.js"
   ],
   "dependencies": {
-    "@open-wc/testing-karma": "^3.2.32",
-    "karma-sauce-launcher": "^2.0.2"
+    "@open-wc/testing-karma": "^3.3.19",
+    "karma-sauce-launcher": "^4.1.4"
   },
   "devDependencies": {
     "chai": "^4.2.0",
     "deepmerge": "^4.2.2",
+    "eslint": "^6.8.0",
+    "eslint-config-google": "^0.14.0",
     "mocha": "^7.0.1"
   }
 }
