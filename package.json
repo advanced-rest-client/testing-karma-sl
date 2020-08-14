@@ -1,6 +1,6 @@
 {
   "name": "@advanced-rest-client/testing-karma-sl",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Testing with karma using SauceLabs",
   "scripts": {
     "test": "karma start demo/karma.conf.js",
@@ -31,14 +31,14 @@
     "*.d.ts"
   ],
   "dependencies": {
-    "@open-wc/testing-karma": "^4.0.0",
+    "@open-wc/testing-karma": "^4.0.3",
     "karma-sauce-launcher": "^4.1.5"
   },
   "devDependencies": {
     "chai": "^4.2.0",
     "deepmerge": "^4.2.2",
-    "eslint": "^7.5.0",
+    "eslint": "^7.6.0",
     "eslint-config-google": "^0.14.0",
-    "mocha": "^8.0.1"
+    "mocha": "^8.1.1"
   }
 }
